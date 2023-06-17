@@ -1,4 +1,12 @@
+.relative {
+	position: relative;
+	width: 253px;
+	height: 100vh;
+}
+
 .aside {
+	position: fixed;
+	left: 0;
 	width: 253px;
 	height: 100vh;
 	background-color: #2F49D1;
