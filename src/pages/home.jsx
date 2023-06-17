@@ -5,8 +5,9 @@ import icon from '.././assets/icon.svg'
 const Home = () => {
 	return (
 		<Layout>
-			<h1 className='text-danger'>
-				<div className="report__inner">
+			
+				<div className="container-fluid">
+				<div className={styles.report__inner}>
 					<div className="row">
 						<div className="col-md-6">
 							<div className={styles.report__card}>
@@ -54,7 +55,8 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
-			</h1>
+				</div>
+			
 		</Layout>
 	);
 };
