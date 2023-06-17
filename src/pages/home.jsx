@@ -6,10 +6,10 @@ const Home = () => {
 	return (
 		<Layout>
 			
-				{/* Home Cards  */}
+				
 				<div className="container-fluid">
 				<div className={styles.report__inner}>
-					<div className="row">
+					<div className="row" style={{rowGap: "25px"}}>
 						<div className="col-md-6">
 							<div className={styles.report__card}>
 								<div>
@@ -57,7 +57,7 @@ const Home = () => {
 					</div>
 				</div>
 				</div>
-				{/* Home Cards  */}
+			
 			
 		</Layout>
 	);
