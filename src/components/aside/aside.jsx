@@ -1,9 +1,11 @@
-
+import styles from './aside.module.css';
 
 const Aside = () => {
 	return (
-		<div>Aside</div>
-	)
-}
+		<div className={styles.aside}>
+			<div className='w-100 shadow'>asas</div>
+		</div>
+	);
+};
 
-export default Aside
+export default Aside;
