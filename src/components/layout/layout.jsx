@@ -1,23 +1,22 @@
 import Aside from '../aside/aside';
+import styles from './layout.module.css';
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
 	return (
-		<main className='d-flex align-items-start'>
-			<Aside  />
+		<div className={styles.container}>
+			<main className='d-flex align-items-start'>
+				<Aside />
 
-			<article className='w-100'> 
-				<section className=''>
-					<div className='navbar navbar-expand-lg navbar-light bg-white'>
-						<div className='container-fluid'>
-						<h2>Xisobot</h2>
-						</div>
-					</div>
-				</section>
+				<article className={styles.article}>
+					<section className={styles.header}>
+						<h2 className='m-0'>Xisobot</h2>
+					</section>
 
-				{children}
-			</article>
-		</main>
+					{children}
+				</article>
+			</main>
+		</div>
 	);
 };
 
