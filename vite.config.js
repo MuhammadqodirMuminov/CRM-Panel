@@ -10,7 +10,7 @@ export default defineConfig({
       '@': resolve('src'),
       '@components': resolve('src', 'components'),
       '@pages': resolve('src', 'pages'),
-      '@images': resolve('public', 'assets', 'images'),
+      '@images': resolve('public', 'images'),
       '@service': resolve('src', 'service'),
       '@css': resolve('src', 'css')
     }
