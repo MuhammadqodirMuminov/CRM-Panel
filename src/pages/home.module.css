@@ -1,0 +1,44 @@
+
+
+.report__card {width: 100%;
+    max-width: 515px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    ;
+}
+
+
+.report__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -1px;
+    color: #000000;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.report__count {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -1px;
+    color: #000000;
+    margin: 0;
+}
+
+.report__ellipse img {
+    margin-top: 80px;
+}
