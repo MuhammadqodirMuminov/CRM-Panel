@@ -1,7 +1,9 @@
+.report__inner {
+    padding-top: 32px;
+}
 
-
-.report__card {width: 100%;
-    max-width: 515px;
+.report__card {
+    width: 100%;
     padding: 20px;
     background: #FFFFFF;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
@@ -41,4 +43,8 @@
 
 .report__ellipse img {
     margin-top: 80px;
+}
+
+.report__inner .row {
+    row-gap: 25px;
 }
