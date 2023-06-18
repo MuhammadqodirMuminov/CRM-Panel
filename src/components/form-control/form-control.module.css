@@ -1,0 +1,82 @@
+.form-section {
+	max-width: 1024px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	gap: 32px;
+}
+
+.formText {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 48px;
+	letter-spacing: 0.02em;
+	text-align: start;
+	color: #0061f7;
+}
+
+.forms {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+}
+
+.btnFeild {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: end;
+}
+
+.btn {
+	width: 314px;
+	background: #2f49d1;
+	border-radius: 8px;
+	padding: 13px;
+	text-align: center;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	/* identical to box height */
+
+	letter-spacing: 0.02em;
+
+	color: #ffffff;
+}
+
+@media only screen and (max-width: 1386px) {
+	.forms {
+		width: 100%;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+		justify-content: space-between;
+		align-items: center;
+		
+	}
+
+	.btnFeild {
+		justify-content: start;
+	}
+}
+
+@media only screen and (max-width: 939px) {
+	.forms {
+		width: 100%;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 32px;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
