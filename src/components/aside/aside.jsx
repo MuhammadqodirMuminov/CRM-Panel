@@ -14,15 +14,15 @@ const Aside = () => {
 	const [menu, setMenu] = useState(false)
 
 	return (
-		<div className={styles.relative}>
-			<div className={styles.aside}>
+		<div className={`${styles.relative} ${menu ? styles["menu-toggle"] : ""}`}>
+			<div className={`${styles.aside} ${menu ? styles["menu-toggle"] : ""}`}>
 				<div className='w-100'>
 					<div className={styles.sidebar}>
 						<div className={styles.sidebar__top}>
 							<div className={styles.sidebar__inner}>
-								<img src={SidebarContact} width={48} height={48} alt="Sidebar contact image" />
-								<h2 className={styles.sidebar__title}>CRM PANEL</h2>
-								<button>
+								<img src={`${SidebarContact} ${menu ? styles["visually-hidden"] : ""}`} width={48} height={48} alt="Sidebar contact image" />
+								<h2 className={`${styles.sidebar__title} ${menu ? styles["visually-hidden"] : ""}`}>CRM PANEL</h2>
+								<button className={styles.menu} onClick={() => setMenu(!menu)}>
 									<img src={SidebarToggleMenu} width={32} height={32} alt="Toggle menu button" />
 								</button>
 							</div>
@@ -32,31 +32,31 @@ const Aside = () => {
 							<li className={styles.sidebar__item}>
 								<NavLink activeClassName={styles.active} className={styles.sidebar__link}  to={'#'} >
 									<img src={SidebarHome} width={20} height={20} alt="Sidebar home image" />				
-									Xisobotlar
+									{menu ? "" : "Xisobotlar"}
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
 								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'} >
 									<img src={SidebarEdu} width={20} height={20} alt="Sidebar home image" />
-									O’quvchilar
+									{menu ? "" : "O’quvchilar"}
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
 								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'} >
 									<img src={SidebarUsers} width={20} height={20} alt="Sidebar home image" />				
-									Guruhlar
+									{menu ? "" : "Guruhlar"}
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
 								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'} >
 									<img src={SidebarCard} width={20} height={20} alt="Sidebar home image" />
-									To’lovlar
+									{menu ? "" : "To’lovlar"}
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
 								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'} >
 									<img src={SidebarAtt} width={20} height={20} alt="Sidebar home image" />
-									Davomat
+									{menu ? "" : "Davomat"}
 								</NavLink>
 							</li>
 						</ul>
