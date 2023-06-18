@@ -2,7 +2,7 @@
 import { Layout } from '../components';
 import styles from './home.module.css'
 import icon from '.././assets/icon.svg'
-import ApexChart from '../components/apexchart/apexchart';
+import ApexChart from '../components/apexchart/apexchart.jsx';
 
 const Home = () => {
 	return (
