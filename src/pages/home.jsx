@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Layout } from '../components';
 import styles from './home.module.css'
 import icon from '.././assets/icon.svg'
+import ApexChart from '../components/apexchart/apexchart';
 
 const Home = () => {
 	return (
@@ -56,8 +58,22 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
+				<div className={styles.apex__chart}>
+		<div className="row">
+			<div className="col-md-6">
+				<ApexChart/>
+			</div>
+			<div className="col-md-6 d-flex justify-content-end">
+				<div className={styles.apex__wrap}>
+					<h3 className={styles.apex__title}>2023-YIL </h3>
+					<h4 className={styles.apex__title}>Aprel oyigacha  bo'lgan statistika</h4>
+				</div>
+			</div>
+		</div>
+				</div>
 				</div>
 			
+		
 			
 		</Layout>
 	);
