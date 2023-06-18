@@ -1,6 +1,17 @@
 button {
 	border: none;
+	outline: none;
 	background-color: transparent;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 .relative {
@@ -8,6 +19,7 @@ button {
 	width: 100%;
 	max-width: 20%;
 	height: 100vh;
+	transition: all ease 0.3s;
 }
 
 .aside {
@@ -17,6 +29,7 @@ button {
 	max-width: 20%;
 	height: 100vh;
 	background-color: #2F49D1;
+	transition: all ease 0.3s;
 }
 
 .sidebar__top {
@@ -48,16 +61,16 @@ button {
 .sidebar__list {
 	margin: 0;
 	margin-top: 32px;
-	margin-left: 20px;
 	padding: 0;
 	list-style-type: none;
 }
 
 .sidebar__item {
-	padding: 20px 0 20px 20px;
+	padding: 20px 0 20px 30px;
 }
 
 .sidebar__item:hover {
+	background-color: #01275f7d;
 	color: #a5a2a2fb;
 }
 
@@ -72,6 +85,14 @@ button {
 	margin-right: 16px;
 }
 
-.active {
-	color: red !important;
+.menu {
+	outline: none;
+}
+
+.menu:active {
+	outline: none;
+}
+
+.menu-toggle {
+	max-width: 4%;
 }
