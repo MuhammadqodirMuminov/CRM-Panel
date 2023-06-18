@@ -1,0 +1,58 @@
+.select {
+	max-width: 320px;
+	width: 100%;
+
+	padding: 13px 12px;
+
+	background: #ffffff;
+	border: 1px solid rgba(47, 73, 209, 0.6);
+	border-radius: 8px;
+
+	/* Text sm/Regular */
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #000000;
+
+	background: #ffffff;
+	outline: none;
+}
+
+.select {
+	appearance: none;
+	overflow: -moz-hidden-unscrollable;
+	background: url('../../assets/arrow.svg') no-repeat right white;
+
+	display: inline-block;
+	position: relative;
+}
+
+.feild {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 8px;
+}
+
+.label {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+
+	color: #000000;
+}
+
+.select * {
+	background-color: rgb(187, 132, 152);
+
+	padding: 10px;
+
+	border: 1px solid rgba(47, 73, 209, 0.6);
+}

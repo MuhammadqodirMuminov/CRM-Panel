@@ -6,9 +6,8 @@ import ApexChart from '../components/apexchart/apexchart.jsx';
 
 const Home = () => {
 	return (
-		<Layout>
+		<Layout head={'Xisobotlar'}>
 			
-				
 				<div className="container-fluid">
 				<div className={styles.report__inner}>
 					<div className="row" style={{rowGap: "25px"}}>

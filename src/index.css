@@ -10,5 +10,69 @@
 
 body {
 	margin: 0;
-	 padding: 0;
+	padding: 0;
 }
+
+input[type='file'] {
+	position: relative;
+	padding: 0;
+}
+
+input[type='file']::file-selector-button {
+	width: 320px;
+	padding: 13px 12px;
+	color: transparent;
+}
+
+/* Faked label styles and icon */
+input[type='file']::before {
+	position: absolute;
+	pointer-events: none;
+	top: 10px;
+	right: 16px;
+	height: 30px;
+	width: 30px;
+	content: '';
+	background-image: url('./assets/download.svg');
+	background-repeat: no-repeat;
+}
+
+input[type='file']::after {
+	position: absolute;
+	pointer-events: none;
+	top: 13px;
+	left: 12px;
+
+
+	content: 'Yuklash';
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #000000;
+}
+
+/* ------- From Step 1 ------- */
+
+/* file upload button */
+input[type='file']::file-selector-button {
+	cursor: pointer;
+	background-color: white;
+	border: none;
+	transition: background-color 200ms;
+	width: 100%;
+}
+
+/* file upload button hover state */
+input[type='file']::file-selector-button:hover {
+	background-color: #f3f4f6;
+}
+
+/* file upload button active state */
+input[type='file']::file-selector-button:active {
+	background-color: #e5e7eb;
+}
+
+
