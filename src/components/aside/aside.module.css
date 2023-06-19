@@ -91,6 +91,12 @@ button {
 
 .menu:active {
 	outline: none;
+	border: none;
+}
+
+.menu:focus {
+	outline: none;
+	border: none;
 }
 
 .menu-toggle {
