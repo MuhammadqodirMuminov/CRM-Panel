@@ -11,6 +11,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	background: #eaedfad5;
 }
 
 input[type='file'] {
@@ -74,5 +75,6 @@ input[type='file']::file-selector-button:hover {
 input[type='file']::file-selector-button:active {
 	background-color: #e5e7eb;
 }
+
 
 

@@ -33,43 +33,57 @@ const Students = () => {
 				</div>
 				<div className={`w-100  text-center ${styles.tableMain}`}>
 					<table className='table'>
-						<thead className='table-primary'>
-							<tr>
-								<th scope='col'>№</th>
-								<th scope='col'>First</th>
-								<th scope='col'>Last</th>
-								<th scope='col'>Handle</th>
-								<th scope='col'>Handle</th>
-								<th scope='col'>Handle</th>
+						<thead className='p-0'>
+							<tr className={styles['table-primary']}>
+								<th className={styles.head} scope='col'>
+									№
+								</th>
+								<th className={styles.head} scope='col'>
+									O’quvchi ismi
+								</th>
+								<th className={styles.head} scope='col'>
+									Telefon nomer
+								</th>
+								<th className={styles.head} scope='col'>
+									Yo’nalish
+								</th>
+								<th className={styles.head} scope='col'>
+									Ota-ona(F.I.SH)
+								</th>
+								<th className={styles.head} scope='col'>
+									Ota-ona (Tel)
+								</th>
+								<th className={styles.head} scope='col'></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th scope='row'>1</th>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-								<td>@mdo</td>
+							<tr className={styles['table-row']}>
+								<th className={styles.row} scope='row'>
+									1
+								</th>
+								<td className={styles.row}>Mark</td>
+								<td className={styles.row}>+998999741749</td>
+								<td className={styles.row}>Dasturlash</td>
+								<td className={styles.row}>sucerberg</td>
 
-								<td>@mdo</td>
+								<td className={styles.row}>+998911232332</td>
+								<td className={styles.row}>
+									<i className={`fas fa-trash ${styles.icon}`}></i>
+								</td>
 							</tr>
-							<tr>
-								<th scope='row'>2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-								<td>@fat</td>
+							<tr className={` ${styles.active} ${styles['table-row']}`}>
+								<th className={styles.row} scope='row'>
+									1
+								</th>
+								<td className={styles.row}>Mark</td>
+								<td className={styles.row}>+998999741749</td>
+								<td className={styles.row}>Dasturlash</td>
+								<td className={styles.row}>sucerberg</td>
 
-								<td>@fat</td>
-							</tr>
-							<tr>
-								<th scope='row'>3</th>
-								<td>Larry</td>
-								<td>the Bird</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-
-								<td>@twitter</td>
+								<td className={styles.row}>+998911232332</td>
+								<td className={styles.row}>
+									<i className={`fas fa-trash ${styles.icon}`}></i>
+								</td>
 							</tr>
 						</tbody>
 					</table>
