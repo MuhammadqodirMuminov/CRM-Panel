@@ -1,0 +1,8 @@
+.group {
+	margin-top: 84px;
+	padding: 39px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 80px;
+}

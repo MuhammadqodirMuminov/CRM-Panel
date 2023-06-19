@@ -19,3 +19,11 @@ export const studentSchema = yup.object().shape({
 	student_family_name: yup.string().required('student family name is required'),
 	student_family_phone: yup.string().matches(phoneRules).required('student phone is required'),
 });
+
+export const groupSchema = yup.object().shape({
+	school_days: yup.string().required('school_days is required'),
+	teacher_name: yup.string().required('student name is required'),
+
+	teacher_phone_number: yup.string().matches(phoneRules).required('teacher phone is required'),
+	avatar: yup.string().required('image is required'),
+});
