@@ -42,13 +42,13 @@ const Aside = () => {
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
-								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'}>
+								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'/students'}>
 									<img src={SidebarEdu} width={20} height={20} alt='Sidebar home image' />
 									{menu ? '' : 'O’quvchilar'}
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
-								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'}>
+								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'/groups'}>
 									<img src={SidebarUsers} width={20} height={20} alt='Sidebar home image' />
 									{menu ? '' : 'Guruhlar'}
 								</NavLink>
