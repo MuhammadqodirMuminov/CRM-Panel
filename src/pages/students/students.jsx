@@ -1,12 +1,9 @@
-import { Layout } from '../../components';
+import { Layout, SearchBar } from '../../components';
 import FormControl from '../../components/form-control/form-control';
 import styles from './students.module.css';
 
 const Students = () => {
-	function toggleShow() {
-		var el = document.getElementById('box');
-		el.classList.toggle('show');
-	}
+
 
 	return (
 		<Layout head={"O'quvchilar"}>
@@ -15,22 +12,8 @@ const Students = () => {
 			</section>
 
 			<section className={styles.table}>
-				<div className={styles['table-top']}>
-					<h2 className={styles['table__title']}>Bizning o’quvchilar</h2>
-					<div className={styles.container}>
-						<input
-							type='text'
-							id='box'
-							placeholder='Search anything...'
-							className={styles['search__box']}
-						/>
-						<i
-							className={`fas fa-search ${styles['search__icon']}`}
-							id='icon'
-							onClick={toggleShow}
-						></i>
-					</div>
-				</div>
+				<SearchBar title={'Bizning o’quvchilar'} />
+
 				<div className={`w-100  text-center ${styles.tableMain}`}>
 					<table className='table'>
 						<thead className='p-0'>

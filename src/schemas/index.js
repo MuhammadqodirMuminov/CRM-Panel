@@ -27,3 +27,10 @@ export const groupSchema = yup.object().shape({
 	teacher_phone_number: yup.string().matches(phoneRules).required('teacher phone is required'),
 	avatar: yup.string().required('image is required'),
 });
+
+export const paymentSchema = yup.object().shape({
+	student_name: yup.string().required('student name is required'),
+	student_phone: yup.string().matches(phoneRules).required('student phone is required'),
+	payment_date: yup.string().required('payment date is required'),
+	payment_count: yup.number().required('payment count is required'),
+});

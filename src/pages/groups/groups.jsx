@@ -1,12 +1,9 @@
-import { FormControlGroup, Layout } from '../../components';
-import styles from "./groups.module.css";
-import Styles from '../students/students.module.css';
-
+import { FormControlGroup, Layout, SearchBar } from '../../components';
+import styles from './groups.module.css';
 
 const Groups = () => {
-
 	function toggleShow() {
-		var el = document.getElementById('box');
+		const el = document.getElementById('box');
 		el.classList.toggle('show');
 	}
 
@@ -17,22 +14,7 @@ const Groups = () => {
 					<FormControlGroup />
 				</section>
 				<section>
-				<div className={Styles['table-top']}>
-					<h2 className={Styles['table__title']}>Bizning o’quvchilar</h2>
-					<div className={Styles.container}>
-						<input
-							type='text'
-							id='box'
-							placeholder='Search anything...'
-							className={Styles['search__box']}
-						/>
-						<i
-							className={`fas fa-search ${Styles['search__icon']}`}
-							id='icon'
-							onClick={toggleShow}
-						></i>
-					</div>
-				</div>
+					<SearchBar title={'Mavjud guruhlar'} />
 				</section>
 			</div>
 		</Layout>
