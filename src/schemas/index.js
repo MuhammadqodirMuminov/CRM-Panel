@@ -34,3 +34,8 @@ export const paymentSchema = yup.object().shape({
 	payment_date: yup.string().required('payment date is required'),
 	payment_count: yup.number().required('payment count is required'),
 });
+
+export const courseSchema = yup.object().shape({
+	course_name: yup.string().required('course name is required'),
+	course_price: yup.string().required('course price is required'),
+});

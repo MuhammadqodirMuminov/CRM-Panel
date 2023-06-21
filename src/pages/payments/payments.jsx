@@ -1,6 +1,6 @@
 import { FormControlPayment, Layout, SearchBar } from '../../components';
-import classes from './payments.module.css';
 import styles from '../students/students.module.css';
+import classes from './payments.module.css';
 
 const Payments = () => {
 	return (
@@ -29,10 +29,10 @@ const Payments = () => {
 										Yo’nalish
 									</th>
 									<th className={styles.head} scope='col'>
-									O’qituvchisi
+										O’qituvchisi
 									</th>
 									<th className={styles.head} scope='col'>
-									To’lov vaqti
+										To’lov vaqti
 									</th>
 									<th className={styles.head} scope='col'></th>
 								</tr>
