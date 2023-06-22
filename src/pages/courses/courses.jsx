@@ -36,7 +36,7 @@ const Courses = () => {
 								<Card
 									card={{
 										course_name: 'Matematika',
-										student_img: '',
+										student_img: 'Matematika',
 										teacher_name: 'Muxamadaliyev Ibrohim',
 										teacher_phone: '+998900113861',
 										course_days: 'DU-CHOR-JUMA',
