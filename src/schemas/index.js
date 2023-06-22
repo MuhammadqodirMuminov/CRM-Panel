@@ -38,4 +38,5 @@ export const paymentSchema = yup.object().shape({
 export const courseSchema = yup.object().shape({
 	course_name: yup.string().required('course name is required'),
 	course_price: yup.string().required('course price is required'),
+	avatar: yup.string().required('image is required'),
 });
