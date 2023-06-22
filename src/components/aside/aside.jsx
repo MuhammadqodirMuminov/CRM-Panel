@@ -42,13 +42,39 @@ const Aside = () => {
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
-								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'/students'}>
+								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'}>
+									<i
+										className='fas fa-landmark'
+										style={{ width: '20px', fontSize: '23px', marginRight: '14px' }}
+									></i>
+									{menu ? '' : 'Filiallar'}
+								</NavLink>
+							</li>
+							<li className={styles.sidebar__item}>
+								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'#'}>
+									<i
+										className='fas fa-book'
+										style={{ width: '20px', fontSize: '23px', marginRight: '14px' }}
+									></i>
+									{menu ? '' : 'Kurslar'}
+								</NavLink>
+							</li>
+							<li className={styles.sidebar__item}>
+								<NavLink
+									activeClassName={styles.active}
+									className={styles.sidebar__link}
+									to={'/students'}
+								>
 									<img src={SidebarEdu} width={20} height={20} alt='Sidebar home image' />
 									{menu ? '' : 'O’quvchilar'}
 								</NavLink>
 							</li>
 							<li className={styles.sidebar__item}>
-								<NavLink activeClassName={styles.active} className={styles.sidebar__link} to={'/groups'}>
+								<NavLink
+									activeClassName={styles.active}
+									className={styles.sidebar__link}
+									to={'/groups'}
+								>
 									<img src={SidebarUsers} width={20} height={20} alt='Sidebar home image' />
 									{menu ? '' : 'Guruhlar'}
 								</NavLink>
