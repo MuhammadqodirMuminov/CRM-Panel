@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "formik": "^2.4.2",
     "mdbootstrap": "^4.20.0",
     "mdbreact": "^4.6.1",
