@@ -7,3 +7,4 @@ export { default as InputFeild } from './input-feild/input-feild.jsx';
 export { default as Layout } from './layout/layout.jsx';
 export { default as Option } from './option/option.jsx';
 export { default as SearchBar } from './search-bar/search-bar.jsx';
+export { default as Card} from "./course-card/course-card.jsx"

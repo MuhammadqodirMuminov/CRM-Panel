@@ -1,11 +1,30 @@
-import { useState } from 'react';
-import { FormControlCourses, Layout, SearchBar } from '../../components';
-import { Card } from '../../components/card/card.jsx';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Card, FormControlCourses, Layout, SearchBar } from '../../components';
 import { Modal } from '../../components/modal/modal';
+import courseService from '../../service/course.service';
+import { getCourseFailore, getCoursesSuccess } from '../../slice/courseSlice';
 import styles from './courses.module.css';
 
 const Courses = () => {
 	const [isModalOpen, setModalIsOpen] = useState(true);
+	const { courses } = useSelector(state => state.course);
+	const dispatch = useDispatch();
+
+	const initialfetch = async () => {
+		try {
+			const branch = await courseService.getBranches();
+			const course = await courseService.getCourses();
+
+			dispatch(getCoursesSuccess([branch.data, course.data]));
+		} catch (error) {
+			dispatch(getCourseFailore(error.message));
+		}
+	};
+
+	useEffect(() => {
+		initialfetch();
+	}, []);
 
 	return (
 		<>
@@ -16,83 +35,28 @@ const Courses = () => {
 					</section>
 					<section className={styles.list}>
 						<SearchBar title={'Barcha mavjud kurslar'} />
-
 						<div className={styles['course__list']}>
-							<div className={styles['card-item']}>
-								<Card
-									card={{
-										course_name: 'Matematika',
-										student_img: '',
-										teacher_name: 'Muxamadaliyev Ibrohim',
-										teacher_phone: '+998900113861',
-										course_days: 'DU-CHOR-JUMA',
-										course_time: '14:00-16:00',
-										group_members: '25ta',
-										payments_count: '10ta',
-									}}
-								/>
-							</div>
-							<div className={styles['card-item']}>
-								<Card
-									card={{
-										course_name: 'Matematika',
-										student_img: 'Matematika',
-										teacher_name: 'Muxamadaliyev Ibrohim',
-										teacher_phone: '+998900113861',
-										course_days: 'DU-CHOR-JUMA',
-										course_time: '14:00-16:00',
-										group_members: '25ta',
-										payments_count: '10ta',
-									}}
-								/>
-							</div>
-							<div className={styles['card-item']}>
-								<Card
-									card={{
-										course_name: 'Matematika',
-										student_img: '',
-										teacher_name: 'Muxamadaliyev Ibrohim',
-										teacher_phone: '+998900113861',
-										course_days: 'DU-CHOR-JUMA',
-										course_time: '14:00-16:00',
-										group_members: '25ta',
-										payments_count: '10ta',
-									}}
-								/>
-							</div>
-							<div className={styles['card-item']}>
-								<Card
-									card={{
-										course_name: 'Matematika',
-										student_img: '',
-										teacher_name: 'Muxamadaliyev Ibrohim',
-										teacher_phone: '+998900113861',
-										course_days: 'DU-CHOR-JUMA',
-										course_time: '14:00-16:00',
-										group_members: '25ta',
-										payments_count: '10ta',
-									}}
-								/>
-							</div>
-							<div className={styles['card-item']}>
-								<Card
-									card={{
-										course_name: 'Matematika',
-										student_img: '',
-										teacher_name: 'Muxamadaliyev Ibrohim',
-										teacher_phone: '+998900113861',
-										course_days: 'DU-CHOR-JUMA',
-										course_time: '14:00-16:00',
-										group_members: '25ta',
-										payments_count: '10ta',
-									}}
-								/>
-							</div>
+							{courses ? (
+								courses.map((course, i) => {
+									return (
+										<div className={styles['card-item']} key={i}>
+											<Card card={course} setModalIsOpen={setModalIsOpen} />
+										</div>
+									);
+								})
+							) : (
+								<div className='d-flex justify-content-center'>
+									<div
+										className='spinner-border'
+										style={{ width: '3rem', height: '3rem' }}
+										role='status'
+									>
+										<span className='visually-hidden'></span>
+									</div>
+								</div>
+							)}
 						</div>
 					</section>
-				</div>
-				<div>
-					<button onClick={() => setModalIsOpen(prev => !prev)}>open</button>
 				</div>
 			</Layout>
 			{!isModalOpen && <Modal isModalOpen={isModalOpen} setModalIsOpen={setModalIsOpen} />}
