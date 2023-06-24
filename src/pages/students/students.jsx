@@ -1,13 +1,31 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Layout, SearchBar } from '../../components';
 import FormControl from '../../components/form-control/form-control';
 import { Pagination } from '../../components/pagination/Pagination';
-import styles from './students.module.css';
+import styles from './students.module.css'
+import axios from 'axios';
+import StudentService from '../../service/student.service';
+
 
 
 const Students = () => {
 	let [page, setPage] = useState(1);
+
+	const [student, setStudent] = useState()
+
+	const fetchs = async () => {
+		const students = await StudentService.studentAll()
+		setStudent(students.data.students);
+		return students.data.students
+	}
+
+	useEffect(() => {
+		fetchs()
+	}, [])
+
+	console.log(student);
 
 	return (
 		<Layout head={"O'quvchilar"}>
@@ -29,13 +47,13 @@ const Students = () => {
 									O’quvchi ismi
 								</th>
 								<th className={styles.head} scope='col'>
-									Telefon nomer
+								O’quvchi familiyasi
 								</th>
 								<th className={styles.head} scope='col'>
 									Yo’nalish
 								</th>
 								<th className={styles.head} scope='col'>
-									Ota-ona(F.I.SH)
+									Tel. Raqami
 								</th>
 								<th className={styles.head} scope='col'>
 									Ota-ona (Tel)
@@ -44,109 +62,30 @@ const Students = () => {
 							</tr>
 						</thead>
 						<tbody>
-							<tr className={styles['table-row']}>
+							{student?.length ? 
+							student?.map(item => (
+								<>
+								<tr className={styles['table-row']}>
 								<th className={styles.row} scope='row'>
-									1
+									{item.student_id}
 								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
+								<td className={styles.row}>{item.student_name}</td>
+								<td className={styles.row}>{item.student_last_name}</td>
+								<td className={styles.row}>Nodejs</td>
+								<td className={styles.row}>{item.student_phone}</td>
 
-								<td className={styles.row}>+998911232332</td>
+								<td className={styles.row}>{item.student_family_phone}</td>
 								<td className={styles.row}>
 									<i className={`fas fa-trash ${styles.icon}`}></i>
 								</td>
-							</tr>
-							<tr className={` ${styles.active} ${styles['table-row']}`}>
-								<th className={styles.row} scope='row'>
-									1
-								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
-
-								<td className={styles.row}>+998911232332</td>
-								<td className={styles.row}>
-									<i className={`fas fa-trash ${styles.icon}`}></i>
-								</td>
-							</tr>
-							<tr className={` ${styles.active} ${styles['table-row']}`}>
-								<th className={styles.row} scope='row'>
-									1
-								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
-
-								<td className={styles.row}>+998911232332</td>
-								<td className={styles.row}>
-									<i className={`fas fa-trash ${styles.icon}`}></i>
-								</td>
-							</tr><tr className={` ${styles.active} ${styles['table-row']}`}>
-								<th className={styles.row} scope='row'>
-									1
-								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
-
-								<td className={styles.row}>+998911232332</td>
-								<td className={styles.row}>
-									<i className={`fas fa-trash ${styles.icon}`}></i>
-								</td>
-							</tr><tr className={` ${styles.active} ${styles['table-row']}`}>
-								<th className={styles.row} scope='row'>
-									1
-								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
-
-								<td className={styles.row}>+998911232332</td>
-								<td className={styles.row}>
-									<i className={`fas fa-trash ${styles.icon}`}></i>
-								</td>
-							</tr>
-							<tr className={` ${styles.active} ${styles['table-row']}`}>
-								<th className={styles.row} scope='row'>
-									1
-								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
-
-								<td className={styles.row}>+998911232332</td>
-								<td className={styles.row}>
-									<i className={`fas fa-trash ${styles.icon}`}></i>
-								</td>
-							</tr>
-							<tr className={` ${styles.active} ${styles['table-row']}`}>
-								<th className={styles.row} scope='row'>
-									1
-								</th>
-								<td className={styles.row}>Mark</td>
-								<td className={styles.row}>+998999741749</td>
-								<td className={styles.row}>Dasturlash</td>
-								<td className={styles.row}>sucerberg</td>
-
-								<td className={styles.row}>+998911232332</td>
-								<td className={styles.row}>
-									<i className={`fas fa-trash ${styles.icon}`}></i>
-								</td>
-							</tr>
-							
-							
+							</tr>		
+							</>
+							)) : 'Ma`lumot yo`q'}					
 						</tbody>
 					</table>
 				</div>
 			</section>
-			<Pagination setPage={setPage} page={1000} />
+			{/* <Pagination setPage={setPage} page={1000} /> */}
 
 		</Layout>
 	);
