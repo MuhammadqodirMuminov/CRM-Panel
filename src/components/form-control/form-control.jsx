@@ -10,8 +10,8 @@ const FormControl = () => {
 
 	const initialValues = {
 		student_name: '',
+		student_last_name: '',
 		student_phone: '',
-		student_family_name: '',
 		student_family_phone: '',
 	};
 
@@ -30,15 +30,15 @@ const FormControl = () => {
 				<Form className={styles.form}>
 					<div className={styles.forms}>
 						<InputFeild label={'O’quvchi ismi'} type='text' name='student_name' id='name' />
+						<InputFeild label={'O’quvchi familiyasi'} type='text' name='student_last_name' id='name' />
 						<InputFeild label={'Telefon raqam'} type='number' name='student_phone' id='number' />
-						<Option label={'Yo’nalish'} name='direction' id='derection' />
-						<InputFeild label={'Ota-onasi ismi'} type='text' name='student_family_name' id='name' />
 						<InputFeild
 							label={'Ota onasi nomeri'}
 							type='number'
 							name='student_family_phone'
 							id='number'
 						/>
+						<Option label={'Yo’nalish'} name='direction' id='derection' />
 						<InputFeild
 							label={'Rasm 3x4'}
 							type='file'
