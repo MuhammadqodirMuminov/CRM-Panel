@@ -3,7 +3,7 @@ import styles from './card.module.css';
 //<Card card={{course_name: 'Matematika', student_img: '', teacher_name: 'Muxamadaliyev Ibrohim', teacher_phone: '+998900113861', course_days: 'DU-CHOR-JUMA', course_time: '14:00-16:00', group_members: '25ta', payments_count: '10ta'}}/>
 
 const Card = ({ card, setModalIsOpen }) => {
-	console.log(card);
+
 	return (
 		<div className={styles.card}>
 			<h3 className={styles.card__title}>{card.course_name}</h3>

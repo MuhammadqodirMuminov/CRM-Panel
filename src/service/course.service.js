@@ -9,6 +9,10 @@ const courseService = {
 		const { data } = await axios.get('/admin/courses');
 		return data;
 	},
+	addCourse: async () => {
+		const { data } = await axios.post('/admin/course')
+		return data
+	}
 };
 
 export default courseService;
